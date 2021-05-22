@@ -45,7 +45,7 @@ public class DFA {
 	boolean match = false;
 
 	Node curr = this.map.get(this.startState);
-	for (int i = 0; i < input.length(); i++) {
+	for (int i = 0; i < this.input.length(); i++) {
 	    String c = String.valueOf(input.charAt(i));
 	    curr = curr.goToNext(c);
 	    if (curr == null) {
