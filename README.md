@@ -26,6 +26,10 @@ transition.add(new String[] { "c", "1", "c" });
 
 DFA myDFA = new DFA(setOfStates, startState, acceptState, transition);
 ```
+This DFA has a diagram that looks like this:\
+<img src="https://user-images.githubusercontent.com/25105806/119215683-1246a080-ba84-11eb-9842-68403bacffa9.png" width="50%" height="50%">
+
+
 When testing a specific input string, the input need to be in String type, and `.run()` function will output whether the current DFA accepts the given ipnut string: 
 ```
 String input = "01.0111";
