@@ -41,7 +41,7 @@ This example builds a DFA that will accepty any 0/1 string that starts with `01`
 
 ### 2. Turing Machine
 Turing Machine is also represented by 5-tuple:
-1. ∑ is the non-empty set of input alphabet/symbols: `String input`
+1. ∑ is the non-empty set of input alphabet/symbols: `String input`, which stands for an infinitely long input tape string.
 2. Non-empty set of symbols, tape alphabets: not needed when iniitialize the TM.
 3. S is the non-empty set of states: `HashSet<String> setOfStates`
 4. s0 is the starting state: `String startState`
