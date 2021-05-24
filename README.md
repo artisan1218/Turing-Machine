@@ -37,3 +37,44 @@ System.out.println(myDFA.run(input));
 ```
 This example builds a DFA that will accepty any 0/1 string that starts with `01` sequence
 * Note that the kleene star(\*) can be used to represent any character.
+
+
+### 2. Turing Machine
+Turing Machine is also represented by 5-tuple:
+1. ∑ is the non-empty set of input alphabet/symbols: `String input`
+2. Non-empty set of symbols, tape alphabets: not needed when iniitialize the TM.
+3. S is the non-empty set of states: `HashSet<String> setOfStates`
+4. s0 is the starting state: `String startState`
+5. 𝛿 is the transition function: 𝛿 : S × ∑ -> S: `ArrayList<String[]> transition`, the String array must have five elements in order: fromNode, read value, update value, direction, toNode
+6. F is the set of final/accepting states: `String acceptState`
+7. Reject states: default state, not needed when iniitialize the TM.
+
+When initialize the TM class, four types of elements need to be presented: the non-empty set of states, the starting state, the set of final/accepting states and the transition function.\
+
+This Turing Machine reads a 0/1 tape string as input and delete the last two elements of this input.
+Sample code:
+```
+String startState = "a";
+String acceptState = "d";
+HashSet<String> setOfStates = new HashSet<String>(Arrays.asList("a", "b", "c", "d"));
+ArrayList<String[]> transition = new ArrayList<>();
+transition.add(new String[] { "a", "0", "0", "R", "a" });
+transition.add(new String[] { "a", "1", "1", "R", "a" });
+transition.add(new String[] { "a", "*", "*", "L", "b" });
+transition.add(new String[] { "b", "1", "*", "L", "c" });
+transition.add(new String[] { "b", "0", "*", "L", "c" });
+transition.add(new String[] { "c", "1", "*", "L", "d" });
+transition.add(new String[] { "c", "0", "*", "L", "d" });
+
+TuringMachine tm = new TuringMachine(setOfStates, startState, acceptState, transition);
+```
+This Turing Machine has a diagram that looks like this:\
+<img src="https://user-images.githubusercontent.com/25105806/119281267-f3621e80-bbe9-11eb-9bae-895e2f427ebb.png" width="65%" height="65%">
+
+When testing a specific input string, the input need to be in String type, and `.run()` function will output the result. If the current Turing Machine does not accept the given ipnut string, the result will be `"Input string not accepted"`: 
+```
+String input = "*01100*";
+System.out.println(tm.run(input));
+```
+Output: `011`
+
