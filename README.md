@@ -78,3 +78,5 @@ System.out.println(tm.run(input));
 ```
 Output: `011`
 
+* Note that the input string must start and end with `*`, which stands for the boundary of infinitely long input tape string.
+* If the Turing Machine does not halt due to a bad configuration, the Turing Machine will run forever due to Turing undecidability.
