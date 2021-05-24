@@ -2,10 +2,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class test {
+public class DFAtest {
 
     public static void main(String[] args) {
 	// TODO Auto-generated method stub
+
 	String startState = "a";
 	String acceptState = "c";
 	HashSet<String> setOfStates = new HashSet<String>(Arrays.asList("a", "b", "c"));
@@ -18,6 +19,7 @@ public class test {
 	String input = "01.0111";
 	DFA myDFA = new DFA(setOfStates, startState, acceptState, transition);
 	System.out.println(myDFA.run(input));
+
     }
 
 }
