@@ -69,7 +69,7 @@ transition.add(new String[] { "c", "0", "*", "L", "d" });
 TuringMachine tm = new TuringMachine(setOfStates, startState, acceptState, transition);
 ```
 This Turing Machine has a diagram that looks like this:\
-<img src="https://user-images.githubusercontent.com/25105806/119281267-f3621e80-bbe9-11eb-9bae-895e2f427ebb.png" width="65%" height="65%">
+<img src="https://user-images.githubusercontent.com/25105806/119282596-0f1bf380-bbef-11eb-9438-89efffb10280.png" width="65%" height="65%">
 
 When testing a specific input string, the input need to be in String type, and `.run()` function will output the result. If the current Turing Machine does not accept the given ipnut string, the result will be `"Input string not accepted"`: 
 ```
