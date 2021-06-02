@@ -41,6 +41,53 @@ public class TuringMachine {
 
     }
 
+    boolean check(String input) {
+	StringBuilder inputSB = new StringBuilder(input);
+
+	Node curr = this.map.get(this.startState);
+
+	int idx = 0;
+	// read all leading * at the input
+	while (inputSB.charAt(idx) == '*') {
+	    idx += 1;
+	}
+
+	while (curr.isAcceptState == false && (idx <= inputSB.length() && idx >= 0)) {
+	    String readVal = String.valueOf(inputSB.charAt(idx));
+	    boolean found = false;
+	    for (int i = 0; i < curr.edges.size(); i++) {
+		// if read value is equal to given c, go to pointsTo state
+		if (curr.edges.get(i).trans[1].equals(readVal)) {
+		    found = true;
+		    String change2Val = curr.edges.get(i).trans[2];
+		    inputSB.setCharAt(idx, change2Val.charAt(0));
+		    if (idx == inputSB.length() - 1) {
+			inputSB.append("*");
+		    } else if (idx == 0) {
+			inputSB.insert(0, "*");
+			idx += 1;
+		    }
+		    String direction = curr.edges.get(i).trans[3];
+		    curr = curr.goToNext(readVal);
+		    if (curr == null) {
+			return false;
+		    }
+		    if (direction.equals("L")) {
+			idx--;
+		    } else if (direction.equals("R")) {
+			idx++;
+		    }
+		    break;
+		}
+	    }
+	    if (found == false) {
+		return false;
+	    }
+	}
+
+	return curr.isAcceptState;
+    }
+
     String run(String input) {
 	StringBuilder inputSB = new StringBuilder(input);
 
