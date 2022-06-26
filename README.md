@@ -1,4 +1,3 @@
-# Automata
 
 This repo includes two types of automata:
 1. DFA (Deterministic Finite Automata)
