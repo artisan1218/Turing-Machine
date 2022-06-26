@@ -1,9 +1,9 @@
-
-This repo includes two types of automata:
-1. DFA (Deterministic Finite Automata)
+## Introduction
+This repo includes two types of automaton:
+1. DFA (Deterministic Finite Automaton)
 2. Turing Machine
 
-### 1. DFA (Deterministic Finite Automata)
+### 1. DFA (Deterministic Finite Automaton)
 DFA is represented by 5-tuple:
 1. ∑ is the non-empty set of input alphabet/symbols: `String input`
 2. S is the non-empty set of states: `HashSet<String> setOfStates`
@@ -37,6 +37,7 @@ System.out.println(myDFA.run(input));
 This example builds a DFA that will accepty any 0/1 string that starts with `01` sequence
 * Note that the kleene star(\*) can be used to represent any character.
 
+<br />
 
 ### 2. Turing Machine
 Turing Machine is represented by 7-tuple:
