@@ -49,7 +49,7 @@ Turing Machine is represented by 7-tuple:
 6. F is the set of final/accepting states: `String acceptState`
 7. Reject states: default state, not needed when iniitialize the TM.
 
-When initialize the TM class, four types of elements need to be presented: the non-empty set of states, the starting state, the set of final/accepting states and the transition function.\
+When initialize the TM class, four types of elements need to be presented: the non-empty set of states, the starting state, the set of final/accepting states and the transition function.
 
 This Turing Machine reads a 0/1 tape string as input and delete the last two elements of this input.
 Sample code:
