@@ -3,6 +3,8 @@ This repo includes two types of automaton:
 1. DFA (Deterministic Finite Automaton)
 2. Turing Machine
 
+<br />
+
 ### 1. DFA (Deterministic Finite Automaton)
 DFA is represented by 5-tuple:
 1. ∑ is the non-empty set of input alphabet/symbols: `String input`
